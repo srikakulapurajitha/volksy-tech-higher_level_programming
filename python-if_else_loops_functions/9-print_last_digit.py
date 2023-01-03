@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 
 def print_last_digit(number):
 
@@ -8,4 +7,3 @@ def print_last_digit(number):
     print(last_digit, end='')
 
     return last_digit
-Footer
