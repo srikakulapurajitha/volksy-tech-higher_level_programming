@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-# 11-delete_at.py
-# Brennan D Baraban <375@holbertonschool.com>
-def delete_at(my_list=[], idx=0):
-    """Delete an item at a specific position in a list."""
-    if idx >= 0 and idx < len(my_list):
-        del my_list[idx]
-    return (my_list)
+def print_matrix_integer(matrix=[[]]):
+    for i in range(len(matrix)):
+        if len(matrix[i]) == 0:
+            print()
+        for j in matrix[i]:
+            if j == matrix[i][-1]:
+                print(j)
+            else:
+                print("{:d}".format(j), end=" ")
