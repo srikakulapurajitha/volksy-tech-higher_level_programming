@@ -12,4 +12,3 @@ class Square:
             raise ValueError("size must be >= 0")
 
         square.__size = size
-
