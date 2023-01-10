@@ -2,7 +2,7 @@
 """Square"""
 
 class Square:
-    def __init__(Square, size=0):
+    def __init__(square, size=0):
         if type(size) != int:
             raise TypeError("size must be an integer")
         if size >= 0:
