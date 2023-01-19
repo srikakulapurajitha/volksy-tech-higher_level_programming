@@ -1,25 +1,29 @@
 #!/usr/bin/python3
-"""method for student creation"""
+"""
+    Technical interview preparation:
+
+    You are not allowed to google anything
+    Whiteboard first
+
+    Create a function def pascal_triangle(n): that
+    returns a list of lists of integers representing
+    the Pascal’s triangle of n:
+
+    Returns an empty list if n <= 0
+    You can assume n will be always an integer
+"""
 
 
-class Student:
-    """Student obj, interesting how you don't have to directly
-    test for strings in a loop, python is weird"""
-
-    def __init__(self, first_name, last_name, age):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
-
-    def to_json(self, attrs=None):
-        if attrs is None:
-            return self.__dict__
-        new_dictionary = {}
-        for key, value in self.__dict__.items():
-            if key in attrs:
-                new_dictionary[key] = value
-        return new_dictionary
-
-    def reload_from_json(self, json):
-        for key, value in json.items():
-            setattr(self, key, value)
+def pascal_triangle(n):
+    """ makes a list of lists representing a pascal tringle """
+    lista = []
+    if n <= 0:
+        return lista
+    if n >= 1:
+        lista.append([1])
+    for i in range(1, n):
+        lista.append([1])
+        for j in range(len(lista[i - 1]) - 1):
+            lista[i].append(lista[i - 1][j] + lista[i - 1][j + 1])
+        lista[i].append(1)
+    return lista
