@@ -243,4 +243,3 @@ class Base():
             pos_x += s + 80
             turtle.setworldcoordinates(-30, 30, max_x, -max_x)
         turtle.Screen().exitonclick()
-
