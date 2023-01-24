@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""integer"""
+
+
 def add_integer(a, b=98):
     """doc str"""
 
