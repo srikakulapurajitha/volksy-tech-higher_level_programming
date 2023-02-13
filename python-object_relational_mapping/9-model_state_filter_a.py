@@ -2,6 +2,7 @@
 """string"""
 
 
+import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import State
@@ -15,4 +16,5 @@ if __name__ == "__main__":
 
     for state in session.query(State).order_by(State.id):
         if "a" in state.name:
-            print("{}: {}".format(state.id, state.name))i
+            print("{}: {}".format(state.id, state.name))
+i
