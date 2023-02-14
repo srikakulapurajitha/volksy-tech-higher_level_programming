@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A script that deletes State objects with a name containing the letter a"""
 
+
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
