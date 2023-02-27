@@ -19,4 +19,3 @@ request.get(apiUrl, (err, response, body) => {
     console.log(err);
   }
 });
-
