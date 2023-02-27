@@ -1,20 +1,22 @@
 #!/usr/bin/node
-// gets the contents of a webpage and stores it in a file.
+// prints the number of movies where the character "Wedge Antilles" is present
 
-const request = require('request');
-const process = require('process');
-const fs = require('fs');
 const apiUrl = process.argv[2];
-const filePath = process.argv[3];
+const charToSearch = 18;
+const request = require('request');
 
 request.get(apiUrl, (err, response, body) => {
   if (err === null) {
-    fs.writeFile(filePath, body, 'utf8', (fileError) => {
-      if (fileError !== null) {
-        console.log(fileError);
-      }
-    });
+    const data = JSON.parse(body);
+    let films = data.results;
+    films = films.filter(
+      film => film.characters.find(
+        character => character.match(charToSearch)
+      )
+    );
+    console.log(films.length);
   } else {
     console.log(err);
   }
 });
+
